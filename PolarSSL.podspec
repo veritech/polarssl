@@ -30,6 +30,6 @@ Pod::Spec.new do |s|
 
   s.libraries = "polarssl"
  
-  s.xcconfig = { "LIBRARY_SEARCH_PATHS" => "$(PODS_ROOT)/Pods/PolarSSL" }
+  s.xcconfig = { "LIBRARY_SEARCH_PATHS" => "$(PODS_ROOT)/PolarSSL/library" }
 
 end
