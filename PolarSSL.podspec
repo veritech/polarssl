@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://polarssl.org/"
   s.license      = { :type => "GPL", :file => "LICENSE" }
-  s.author             = { "Jonathan Dalrymple" => "jonathan@float-right.co.uk" }
+  s.author       = { "Jonathan Dalrymple" => "jonathan@float-right.co.uk" }
 
   # s.platform     = :ios
   # s.platform     = :ios, "5.0"
@@ -23,11 +23,13 @@ Pod::Spec.new do |s|
   s.source_files  = "include/polarssl/*.h"
   s.preserve_paths = "library/libpolarssl.a"
 
+  #This builds the project
   s.prepare_command = <<-CMD
-    echo hello world
     make lib
   CMD
-  
-  s.xcconfig = { "LIBRARY_SEARCH_PATHS" => "$(SRCROOT)/Pods/**" }
+
+  s.libraries = "polarssl"
+ 
+  s.xcconfig = { "LIBRARY_SEARCH_PATHS" => "$(PODS_ROOT)/Pods/PolarSSL" }
 
 end
