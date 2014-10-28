@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
   
   s.source_files  = "include/polarssl/*.h"
   s.preserve_paths = "library/libpolarssl.a"
+  s.vendored_library = "libpolarssl.a"
 
   #This builds the project
   s.prepare_command = <<-CMD
